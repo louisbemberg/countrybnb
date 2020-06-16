@@ -1,15 +1,43 @@
-<div>
-  <p>insert navbar here</p>
-  <div class="d-flex">
-    <div class="left-half">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag ("transparent-logo.jpg") %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "HOME", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "RENT YOUR COUNTRY", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%= link_to "Another action", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Adding some space the bad way until we figure out how to make stuff follow the navbar -->
+<br>
+<br>
+<br>
+  <div class= "d-flex">
+    <div class="flex-grow-1 left-half">
       <ul>
         <% @countries.each do |country| %>
           <li> <%= country.name %> </li>
         <% end %>
       </ul>
     </div>
-    <div class="right-half" style="background-image: url('https://unsplash.com/photos/4JL_VAgxwcU');">
-      <p>going to insert a picture here</p>
+    <div class="banner-right-half">
     </div>
   </div>
-</div>
