@@ -1,5 +1,15 @@
-<ul>
-  <% @countries.each do |country| %>
-    <li> <%= country.name %> </li>
-  <% end %>
-</ul>
+<div>
+  <p>insert navbar here</p>
+  <div class="d-flex">
+    <div class="left-half">
+      <ul>
+        <% @countries.each do |country| %>
+          <li> <%= country.name %> </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="right-half" style="background-image: url('https://unsplash.com/photos/4JL_VAgxwcU');">
+      <p>going to insert a picture here</p>
+    </div>
+  </div>
+</div>
