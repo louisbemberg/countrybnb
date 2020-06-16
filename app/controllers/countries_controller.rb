@@ -9,6 +9,7 @@ class CountriesController < ApplicationController
 
   def create
     @country = Country.new(strong_params)
+    raise
     @country.user_id = current_user.id
 
     if @country.save
