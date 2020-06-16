@@ -11,7 +11,7 @@
 puts "1 - Cleaning the database"
 Country.destroy_all
 User.destroy_all
-Consultations.destroy_all
+
 
 puts "2 - Creating countries"
 Country.create(name: "Spain", description: "A lovely placed where people wake up late and still need a siesta", price_p_day: 150)
