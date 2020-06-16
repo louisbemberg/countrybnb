@@ -1,14 +1,40 @@
 <!-- <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p> -->
-<div class="container">
-<h1> Navbar+btn+avatar </h1>
+<!---------------------- NAVBAR ---------------------->
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag ("transparent-logo.jpg") %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "HOME", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "RENT YOUR COUNTRY", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%= link_to "Another action", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 
+<!---------------------- BANNER ---------------------->
 <div class="banner-home">
     <h1>Be different. Rent a country.</h1>
     <p>Help overwhelmed presidents take a break</p>
     <div class="container">
-      <div class="btn btn-info">
-      <%= link_to 'Rent a Country!', countries_path %>
-      </div>
+    <%= link_to 'Rent a Country!', countries_path, class: "btn btn-flat"  %>
+    </div>
 </div>

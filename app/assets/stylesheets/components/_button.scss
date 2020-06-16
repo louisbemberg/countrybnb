@@ -25,16 +25,23 @@
   color: white;
 }
 
+.btn-flat a{
+  text-decoration: none;
+  color: white;
+}
+
 .btn-gradient {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
   background-image: linear-gradient(to right, #003973 0%, #E5E5BE 51%, #003973 100%);
-  // transition: background 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .btn-gradient:hover {
   background-position: right center;
   color: white;
 }
+
+
