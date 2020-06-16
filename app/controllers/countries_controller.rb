@@ -9,7 +9,6 @@ class CountriesController < ApplicationController
 
   def create
     @country = Country.new(strong_params)
-    raise
     @country.user_id = current_user.id
 
     if @country.save
@@ -25,6 +24,6 @@ class CountriesController < ApplicationController
   private
 
   def strong_params
-    params.require(:country).permit(:name, :description, :price_p_day)
+    params.require(:country).permit(:name, :description, :price_p_day, :photo)
   end
 end

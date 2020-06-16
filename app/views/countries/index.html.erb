@@ -35,6 +35,7 @@
   <div class= "d-flex">
     <div class="flex-grow-1 left-half">
         <% @countries.each do |country| %>
+
         <div class="card-product">
             <img src="https://source.unsplash.com/random" />
             <div class="card-product-infos">
@@ -42,6 +43,13 @@
               <p><%= country.description %></p>
             </div>
           </div>
+
+          <li> <%= country.name %> </li>
+          <% if country.photo.attached? %>
+            <li> <%= cl_image_tag country.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <img src="https://source.unsplash.com/random" alt="">
+          <% end %>
         <% end %>
     </div>
     <div class="banner-right-half">
