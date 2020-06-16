@@ -16,14 +16,15 @@ class CountriesController < ApplicationController
       redirect_to countries_path
     else
       render :new
+    end
   end
 
-end
-
- private
+  def show
+    @country = Country.find(params[:id])
+  end
+  private
 
   def strong_params
     params.require(:country).permit(:name, :description, :price_p_day)
   end
-
 end
