@@ -16,6 +16,7 @@ user1 = User.create!(email:"david@gmail.com", first_name: "David", last_name:"He
 user2 = User.create!(email:"wolfgang@gmail.com", first_name: "wolfgang", last_name:"Alkier", password:"1234567")
 user3 = User.create!(email:"ellyn@gmail.com", first_name: "Ellyn", last_name:"Bou", password:"1234567")
 user4 = User.create!(email:"louis.bemberg@gmail.com", first_name: "Louis", last_name:"B", password:"123456")
+user5 = User.create!(email:"donald.trump@gmail.com", first_name: "Donald", last_name:"Trump", password:"123456")
 
 puts "3 - Creating Countries with Pictures"
 
