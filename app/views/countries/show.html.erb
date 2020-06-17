@@ -13,7 +13,8 @@
 <div class="container">
   <div class="container-position">
 
-    <h3 id="letter-space"> <%= @country.name.upcase %> </h3>
+    <h3 id="letter-space"> <strong><%= @country.name.upcase %></strong> </h3>
+    <h3 id="letter-space"> Price per day: <%= @country.price_p_day %>$ </h3>
     <h5 id="letter-space"> <%= @country.description %> </h5>
   </div>
 </div>
@@ -25,5 +26,7 @@
 
 <br>
 <br>
-<p>Welcome back: <%= current_user.first_name %></p>
+<%= link_to "Back to All Countries", countries_path %>
+
+<!-- <p>Welcome back: <%= current_user.first_name %></p> -->
 
