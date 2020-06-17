@@ -19,14 +19,15 @@
   </div>
 </div>
 <div class="container">
-  <h5><strong>Host:</strong> <%= @country.user.first_name%></h5>
+  <h5><strong>Host:</strong> <%= @country.user.first_name%> <%= @country.user.last_name%></h5>
+  <br>
+  <%= link_to "Back to All Countries", countries_path, class: "btn-flat" %>
 </div>
 
 
 
-<br>
-<br>
-<%= link_to "Back to All Countries", countries_path %>
+
+
 
 <!-- <p>Welcome back: <%= current_user.first_name %></p> -->
 
