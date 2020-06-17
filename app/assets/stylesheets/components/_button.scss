@@ -17,12 +17,14 @@
   padding: 8px 24px;
   border-radius: 4px;
   background: #3e8e7c;
+  opacity: 0.9;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
   background: #3e8e7c;
   color: white;
+  opacity: 1;
 }
 
 .btn-flat a{
