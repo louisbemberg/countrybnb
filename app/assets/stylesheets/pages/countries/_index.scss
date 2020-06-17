@@ -3,3 +3,24 @@
 // li {
 //   color:red;
 // }
+.container-box {
+  margin-top: 68px;
+  display:flex;
+  justify-content: flex-end;
+  .map {
+    height:100vh;
+    position:sticky;
+    top:0;
+  }
+  .cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding:16px;
+  flex-grow:1;
+}
+a {
+  margin-bottom:0px;
+  padding-bottom: 0px;
+}
+}
