@@ -1,17 +1,24 @@
 
+
+
 <div class="container">
-  <div class="container-position">
-    <h3 id="letter-space"> <%= @country.name.upcase %> </h3>
-    <h5 id="letter-space"> <%= @country.description %> </h5>
+  <% if @country.photo.attached? %>
+  <div class ="show-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.8)), url('<%= cl_image_path @country.photo.key %>')">
+<% else %>
+<div class ="show-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.8)), url('https://source.unsplash.com/1600x900/?map')">
+<% end %>
   </div>
 </div>
 
 <div class="container">
-  <img src="https://source.unsplash.com/random" alt="unsplash">
-</div>
+  <div class="container-position">
 
+    <h3 id="letter-space"> <%= @country.name.upcase %> </h3>
+    <h5 id="letter-space"> <%= @country.description %> </h5>
+  </div>
+</div>
 <div class="container">
-  <h4>Entire Country Hosted by: <%= @country.user.first_name%></h4>
+  <h5><strong>Host:</strong> <%= @country.user.first_name%></h5>
 </div>
 
 
