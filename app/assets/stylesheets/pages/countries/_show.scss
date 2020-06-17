@@ -1,12 +1,18 @@
-
 .container {
   img {
     width: 80vw;
     border-radius: 7px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    height: 80vh;
   }
 }
 
 #letter-space {
-  letter-spacing: 3px;
+
+  letter-spacing: 2px;
 }
+
+.container-position {
+  margin-top: 70px;
+}
+
