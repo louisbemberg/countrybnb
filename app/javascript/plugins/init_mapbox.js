@@ -18,7 +18,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/louisbemberg/ckbjtavd203zt1irv0kyul5cq' //custom map style I found online, may not work on other accounts?
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
