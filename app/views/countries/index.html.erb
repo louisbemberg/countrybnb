@@ -1,57 +1,21 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag ("transparent-logo.jpg") %>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "HOME", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "RENT YOUR COUNTRY", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
-        </div>
-      </li>
-    </ul>
+<div class="container-box">
+  <div class="cards-container">
+    <% @countries.each do |country| %>
+    <%= link_to country_path(country) do  %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random)">
+        <%= country.name %>
+        <p>Hosted by: <%= country.user.first_name %></p>
+      </div>
+      <% end %>
+    <% end %>
   </div>
+  <%= image_tag "https://images.unsplash.com/photo-1516546453174-5e1098a4b4af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80", class:"map", alt: "map" %>
 </div>
-<!-- Adding some space the bad way until we figure out how to make stuff follow the navbar -->
-<br>
-<br>
-<br>
 
 
-  <div class= "d-flex">
-    <div class="flex-grow-1 left-half">
-        <% @countries.each do |country| %>
 
-        <div class="card-product">
-            <img src="https://source.unsplash.com/random" />
-            <div class="card-product-infos">
-              <h2><%= country.name %></h2>
-              <p><%= country.description %></p>
-            </div>
-          </div>
 
-          <li> <%= country.name %> </li>
-          <% if country.photo.attached? %>
-            <li> <%= cl_image_tag country.photo.key, height: 300, width: 400, crop: :fill %>
-          <% else %>
-            <img src="https://source.unsplash.com/random" alt="">
-          <% end %>
-        <% end %>
-    </div>
-    <div class="banner-right-half">
-    </div>
-  </div>
+
+
+
+
