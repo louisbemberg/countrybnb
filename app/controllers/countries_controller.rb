@@ -1,10 +1,19 @@
 class CountriesController < ApplicationController
   def index
-    @countries = Country.all
+    # @countries = Country.all // < BEFORE GEOCODING
+    @countries = Country.geocoded # returns flats with coordinates
+
+    @markers = @countries.map do |country|
+      {
+        lat: country.latitude,
+        lng: country.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { country: country })
+      }
+    end
   end
 
   def new
-    @country = Country.new()
+    @country = Country.new
   end
 
   def create
@@ -21,6 +30,7 @@ class CountriesController < ApplicationController
   def show
     @country = Country.find(params[:id])
   end
+
   private
 
   def strong_params
