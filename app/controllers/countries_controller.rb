@@ -34,6 +34,6 @@ class CountriesController < ApplicationController
   private
 
   def strong_params
-    params.require(:country).permit(:name, :description, :price_p_day, :photo)
+    params.require(:country).permit(:name, :description, :price_p_day, :address, :photo)
   end
 end
