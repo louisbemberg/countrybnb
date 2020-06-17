@@ -5,25 +5,60 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
-
-#TIME TO SEED!
 puts "1 - Cleaning the database"
 Country.destroy_all
 User.destroy_all
-puts "3- Creating users"
+
+puts "2- Creating users"
 user1 = User.create!(email:"david@gmail.com", first_name: "David", last_name:"Hernan", password:"1234567")
 user2 = User.create!(email:"wolfgang@gmail.com", first_name: "wolfgang", last_name:"Alkier", password:"1234567")
 user3 = User.create!(email:"ellyn@gmail.com", first_name: "Ellyn", last_name:"Bou", password:"1234567")
+user4 = User.create!(email:"louis.bemberg@gmail.com", first_name: "Louis", last_name:"B", password:"123456")
 
-puts "2 - Creating countries"
-Country.create!(name: "Spain", description: "A lovely placed where people wake up late and still need a siesta", price_p_day: 150, user_id:user1.id)
-Country.create!(name: "France", description: "The food is nice, the people not so much.", price_p_day: 185, user_id:user2.id)
-Country.create!(name: "Germany", description: "The people are nice but they don't have time for anything cause they're working", price_p_day: 210, user_id:user3.id)
-Country.create!(name: "USA", description: "HELL YEA! MURICA!", price_p_day: 135, user_id:user2.id)
-Country.create!(name: "Switzerland", description: "Don't bother, it's way too expensive", price_p_day: 785, user_id:user3.id)
+puts "3 - Creating Countries with Pictures"
 
-puts "3 - Creating countries"
-# TBD
+puts "3.1 - Creating Spain..."
+spain_picture = URI.open('https://images.unsplash.com/photo-1445265005361-ae273d6a1e16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80')
+spain = Country.new(name: "Spain", description: "A lovely placed where people wake up late and still need a siesta. Weather is hot and beers are cold. Also has the greatest coding school of all time.", price_p_day: 150, user_id: user1.id)
+spain.photo.attach(io: spain_picture, filename: 'spain.png', content_type: 'image/png')
+spain.save
+
+puts "3.2 - Creating France..."
+france_picture = URI.open('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80')
+france = Country.new(name: "France", description: "The food is nice, the people not so much. You'll eat the best baguette of your life, but at what cost?", price_p_day: 185, user_id:user2.id)
+france.photo.attach(io: france_picture, filename: 'france.png', content_type: 'image/png')
+france.save
+
+puts "3.3 - Creating Austria..."
+austria_picture = URI.open('https://images.unsplash.com/photo-1516550893923-42d28e5677af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80')
+austria = Country.new(name: "Austria", description: "The center of the universe. Austria is to Germany like Coca-Cola is to Pepsi.", price_p_day: 150, user_id: user1.id)
+austria.photo.attach(io: austria_picture, filename: 'austria.png', content_type: 'image/png')
+austria.save
+
+puts "3.3 - Creating Switzerland..."
+switzerland_picture = URI.open('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')
+switzerland = Country.new(name: "Switzerland", description: "This place is like Heaven on earth, but comfort comes at a price. Not so helpful during wars but nice chocolate. Every citizen has an assault rifle but bullets are illegal.", price_p_day: 785, user_id:user3.id)
+switzerland.photo.attach(io: switzerland_picture, filename: 'switzerland.png', content_type: 'image/png')
+switzerland.save
+
+puts "3.4 - Creating USA..."
+usa_picture = URI.open('https://images.unsplash.com/photo-1550850839-8dc894ed385a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1954&q=80')
+usa = Country.new(name: "USA", description: "HELL YEA! MURICA! Really good at sports, startups, and tech. Currently leading the charts in olympic gold medals andCoronavirus infections, and undergoing a major software update on their police.rb files.", price_p_day: 135, user_id:user2.id)
+usa.photo.attach(io: usa_picture, filename: 'switzerland.png', content_type: 'image/png')
+usa.save
+
+puts "3.5 - Creating Germany..."
+germany_picture = URI.open('https://images.unsplash.com/photo-1449452198679-05c7fd30f416?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
+germany = Country.new(name: "Germany", description: "Small, unimportant place next to Austria", price_p_day: 150, user_id: user1.id)
+germany.photo.attach(io: germany_picture, filename: 'germany.png', content_type: 'image/png')
+germany.save
+
+puts "3.6 Creating North Korea..."
+northkorea_picture = URI.open('https://images.unsplash.com/photo-1543325768-c2650cc0d8cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
+northkorea = Country.new(name: "North Korea", description: "Atomic bombs & chill", price_p_day: 150, user_id: user1.id)
+northkorea.photo.attach(io: northkorea_picture, filename: 'northkorea.png', content_type: 'image/png')
+northkorea.save
 
 puts "4 - Database seeded!"
