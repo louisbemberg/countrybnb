@@ -1,9 +1,10 @@
-
-<%= simple_form_for(@country) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price_p_day %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container" id="top-space">
+  <%= simple_form_for(@country) do |f| %>
+    <%= f.input :name, class: "shadow"%>
+    <%= f.input :description, class: "shadow"%>
+    <%= f.input :price_p_day, class: "shadow"%>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
 
