@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #F2E9E4;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
@@ -16,4 +16,8 @@
 .nav-item {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+#logo {
+  color: $sexygreen;
 }
