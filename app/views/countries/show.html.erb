@@ -13,8 +13,8 @@
 <div class="container">
   <div class="container-position">
 
-    <h3 id="letter-space"> <strong><%= @country.name.upcase %></strong> </h3>
-    <h3 id="letter-space"> Price per day: <%= @country.price_p_day %>$ </h3>
+    <h3 id="letter-space" class="title"> <strong><%= @country.name.upcase %></strong> </h3>
+    <h3 id="letter-space" class="right"> <strong><%= @country.price_p_day %></strong><i class="fas fa-euro-sign"></i> / day</h3>
     <h5 id="letter-space"> <%= @country.description %> </h5>
   </div>
 </div>
