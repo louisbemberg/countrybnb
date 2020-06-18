@@ -30,6 +30,9 @@ class CountriesController < ApplicationController
     @country = Country.find(params[:id])
   end
 
+  def destroy
+  end
+
   private
 
   def strong_params
