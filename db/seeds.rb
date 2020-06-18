@@ -64,4 +64,6 @@ northkorea = Country.new(name: "North Korea", address: "Pyongyang, North Korea",
 northkorea.photo.attach(io: northkorea_picture, filename: 'northkorea.png', content_type: 'image/png')
 northkorea.save
 
-puts "4 - Database seeded!"
+puts "4 - Creating Bookings"
+
+puts "5 - Database seeded!"
