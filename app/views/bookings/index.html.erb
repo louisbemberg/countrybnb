@@ -1,0 +1,63 @@
+<h3>Your reservations</h3>
+<table>
+  <thead>
+    <tr class="headers">
+      <th class="header">
+        Status
+      </th>
+      <th class="header">
+        Check In
+      </th>
+      <th class="header">
+        Check Out
+      </th>
+      <th class="header">
+        Reserved On
+      </th>
+      <th class="header">
+        Post
+      </th>
+      <th class="header">
+        Guest
+      </th>
+      <th class="header">
+        Total
+      </th>
+      <th class="header">
+        <a href="#">Details</a>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |bookings| %>
+    <tr class = "row">
+      <!--<td class="cells">
+        <%= booking.status %>
+      </td>-->
+      <td class="cells">
+        <%= booking.start_date %>
+      </td>
+      <td class="cells">
+        <%= booking.end_date %>
+      </td>
+      <td class="cells">
+        <%= booking.created_at %>
+      </td>
+      <td class="cells">
+        <%= booking.country.name %>
+      </td>
+      <td class="cells">
+        <%= booking.user.first_name %>
+      </td>
+      <td class="cells">
+        <%= booking.country.price_p_day*(end_date-start_date) %>
+      </td>
+      <td class="cells">
+        <%= link_to "Details",--------------  %>
+      </td>
+
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
