@@ -31,48 +31,42 @@
   </thead>
   <tbody>
     <% @bookings.each do |booking| %>
-    <tr class = "row-table">
-      <!--<td class="cells">
-        <%#= booking.status %>
-      </td>-->
-      <td class="cells">
-        <%= booking.start_date %>
-      </td>
-      <td class="cells">
-        <%= booking.end_date %>
-      </td>
-      <td class="cells">
-        <%= booking.created_at %>
-      </td>
-      <td class="cells">
-        <%= booking.country.name %>
-      </td>
-      <td class="cells">
-        <%= booking.user.first_name %>
-      </td>
-      <td class="cells">
-        <%= booking.country.price_p_day %>
-      </td>
-      <td class="cells">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown button
+      <tr class = "row-table">
+        <td class="cells">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pending
             <!-- If status = pending => show pending and the dropdown list-->
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <%= link_to "Accept", "path", class:"dropdown-item" %>
-            <%= link_to "Cancel",  "path", class:"dropdown-item" %>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to "Accept", "path", class:"dropdown-item" %>
+              <%= link_to "Cancel",  "path", class:"dropdown-item" %>
+            </div>
           </div>
-       </div>
-
-      </td>
-      <td class="cells">
-        <%= link_to "Details", "#" %>
-      </td>-->
-
-    </tr>
+        </td>
+        <td class="cells">
+          <%= booking.start_date %>
+        </td>
+        <td class="cells">
+          <%= booking.end_date %>
+        </td>
+        <td class="cells">
+          <%= booking.created_at.year.to_s + "-" + booking.created_at.month.to_s + "-"  + booking.created_at.day.to_s%>
+        </td>
+        <td class="cells">
+          <%= booking.country.name %>
+        </td>
+        <td class="cells">
+          <%= booking.user.first_name %>
+        </td>
+        <td class="cells">
+          <%= booking.country.price_p_day %>
+        </td>
+        <td class="cells">
+          <%= link_to "Details", "#" %>
+        </td>
+      </tr>
     <% end %>
-
   </tbody>
 </table>
 </div>
