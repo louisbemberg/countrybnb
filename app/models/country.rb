@@ -3,4 +3,5 @@ class Country < ApplicationRecord
   # @country.user, shows owner of the country
   has_many :users, through: :bookings
   has_one_attached :photo
+  has_many :bookings
 end
