@@ -19,7 +19,6 @@ class CountriesController < ApplicationController
   def create
     @country = Country.new(strong_params)
     @country.user_id = current_user.id
-
     if @country.save
       redirect_to countries_path
     else
