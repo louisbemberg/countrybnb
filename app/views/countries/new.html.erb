@@ -2,6 +2,7 @@
   <%= simple_form_for(@country) do |f| %>
     <%= f.input :name, class: "shadow"%>
     <%= f.input :description, class: "shadow"%>
+    <%= f.input :address, class: "shadow"%>
     <%= f.input :price_p_day, class: "shadow"%>
     <%= f.input :photo, as: :file %>
     <%= f.submit %>
