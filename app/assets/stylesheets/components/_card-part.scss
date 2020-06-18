@@ -12,3 +12,22 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.card-category:hover{
+  color: yellow;
+  // NEED TO FIND A BETTER EFFECT THAN THIS UGLY YELLOW I PUT - LOU
+}
+
+
+.cards-container {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-gap: 16px;
+padding: 16px;
+flex-grow: 1;
+}
+
+.cards-container a {
+  margin-bottom:0px;
+  padding-bottom: 0px;
+}
