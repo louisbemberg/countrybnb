@@ -19,7 +19,7 @@
         Post
       </th>
       <th class="header">
-        Guest
+        Host
       </th>
       <th class="header">
         Total
@@ -33,11 +33,72 @@
     <% @bookings.each do |booking| %>
       <tr class = "row-table">
         <td class="cells">
-          <div class="dropdown">
+          <%= booking.status.capitalize %>
+        </td>
+        <td class="cells">
+          <%= booking.start_date %>
+        </td>
+        <td class="cells">
+          <%= booking.end_date %>
+        </td>
+        <td class="cells">
+          <%= booking.created_at.year.to_s + "-" + booking.created_at.month.to_s + "-"  + booking.created_at.day.to_s%>
+        </td>
+        <td class="cells">
+          <%= booking.country.name %>
+        </td>
+        <td class="cells">
+          <%= booking.country.user.first_name %>
+        </td>
+        <td class="cells">
+          $<%= (booking.country.price_p_day*(booking.end_date-booking.start_date)).to_i%>
+        </td>
+        <td class="cells">
+          <%= link_to "Details", booking_path(booking.id) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h3> Get your country ready for:</h3>
+<table>
+  <thead>
+    <tr class="headers">
+      <th class="header">
+        Status
+      </th>
+      <th class="header">
+        Check In
+      </th>
+      <th class="header">
+        Check Out
+      </th>
+      <th class="header">
+        Reserved On
+      </th>
+      <th class="header">
+        Post
+      </th>
+      <th class="header">
+        Guest
+      </th>
+      <th class="header">
+        Total
+      </th>
+      <th class="header">
+        Details
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @received_bookings.each do |booking| %>
+      <tr class = "row-table">
+        <td class="cells">
+           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Pending
-            <!-- If status = pending => show pending and the dropdown list-->
-            </button>
+             <!--If status = pending => show pending and the dropdown list-->
+             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <%= link_to "Accept", "path", class:"dropdown-item" %>
               <%= link_to "Cancel",  "path", class:"dropdown-item" %>
@@ -60,10 +121,10 @@
           <%= booking.user.first_name %>
         </td>
         <td class="cells">
-          <%= booking.country.price_p_day %>
+          $<%= (booking.country.price_p_day*(booking.end_date-booking.start_date)).to_i%>
         </td>
         <td class="cells">
-          <%= link_to "Details", "#" %>
+          <%= link_to "Details", booking_path(booking.id) %>
         </td>
       </tr>
     <% end %>
