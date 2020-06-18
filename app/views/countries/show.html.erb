@@ -26,6 +26,7 @@
 <br>
 <br>
 
+
 <!-- DELETE BUTTON LOGIC : THE BUTTON APPEARS ONLY IF YOU'RE THE HOST-->
 <% if current_user == @country.user %>
   <%= link_to "Delete #{@country.name}",
@@ -40,6 +41,9 @@
 <br>
 <br>
 
+
+
+<%= render "bookings/new" %>
 
 
 
