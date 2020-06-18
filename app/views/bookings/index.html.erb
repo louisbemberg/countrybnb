@@ -1,4 +1,5 @@
-<h3>Your reservations</h3>
+<div class="container">
+<h3>Hey <%= current_user.first_name %>! Those are your reservations:</h3>
 <table>
   <thead>
     <tr class="headers">
@@ -24,7 +25,7 @@
         Total
       </th>
       <th class="header">
-        <a href="#">Details</a>
+        Details
       </th>
     </tr>
   </thead>
@@ -65,8 +66,8 @@
        </div>
 
       </td>
-      <!--<td class="cells">
-        <%#= link_to "Details",--------------  %>
+      <td class="cells">
+        <%= link_to "Details", "#" %>
       </td>-->
 
     </tr>
@@ -74,3 +75,4 @@
 
   </tbody>
 </table>
+</div>
