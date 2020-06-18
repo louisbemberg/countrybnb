@@ -1,8 +1,5 @@
 // Feel free to add here changes that are specific to the index page
 
-// li {
-//   color:red;
-// }
 .container-box {
   margin-top: 68px;
   display:flex;
@@ -23,4 +20,12 @@ a {
   margin-bottom:0px;
   padding-bottom: 0px;
 }
+}
+
+// MEDIA QUERIES
+@media(max-width:992px) {
+  .cards-container {
+    display:block;
+  }
+
 }
