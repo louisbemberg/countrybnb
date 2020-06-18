@@ -31,6 +31,13 @@ class CountriesController < ApplicationController
     @booking = Booking.new
   end
 
+  def destroy
+    @country = Country.find(params[:id])
+    @country.destroy
+    # no need for app/views/restaurants/destroy.html.erb
+    redirect_to countries_path
+  end
+
   private
 
   def strong_params
