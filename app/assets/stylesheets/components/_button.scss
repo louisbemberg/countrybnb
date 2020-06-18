@@ -32,6 +32,26 @@
   color: white;
 }
 
+.btn-red {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #ef233c;
+  opacity: 0.9;
+  transition: background 0.3s ease;
+}
+
+.btn-red:hover {
+  background: #ef233c;
+  color: white;
+  opacity: 1;
+}
+
+.btn-red a{
+  text-decoration: none;
+  color: white;
+}
+
 .btn-gradient {
   color: white;
   padding: 8px 24px;
