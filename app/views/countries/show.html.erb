@@ -26,6 +26,16 @@
 <br>
 <br>
 
+<!-- DELETE BUTTON -->
+<%= link_to "Delete #{@country.name}",
+            country_path(@country),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "btn btn-danger" %>
+<br>
+<br>
+
+
 
 
 
