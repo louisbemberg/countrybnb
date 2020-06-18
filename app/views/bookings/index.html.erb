@@ -30,7 +30,7 @@
   </thead>
   <tbody>
     <% @bookings.each do |bookings| %>
-    <tr class = "row">
+    <tr class = "row-table">
       <!--<td class="cells">
         <%= booking.status %>
       </td>-->
@@ -50,11 +50,24 @@
         <%= booking.user.first_name %>
       </td>
       <td class="cells">
-        <%= booking.country.price_p_day*(end_date-start_date) %>
+        <%= booking.country.price_p_day %>
       </td>
       <td class="cells">
-        <%= link_to "Details",--------------  %>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+            <!-- If status = pending => show pending and the dropdown list-->
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <%= link_to "Accept", "path", class:"dropdown-item" %>
+            <%= link_to "Cancel",  "path", class:"dropdown-item" %>
+          </div>
+       </div>
+
       </td>
+      <!--<td class="cells">
+        <%#= link_to "Details",--------------  %>
+      </td>-->
 
     </tr>
     <% end %>
