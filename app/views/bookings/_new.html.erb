@@ -1,7 +1,7 @@
- <div class="container" id="top-space">
+ <div class="container">
  <%= simple_form_for([@country, @booking]) do |f| %>
-    <%= f.input :start_date, class: "shadow"%>
-    <%= f.input :end_date, class: "shadow"%>
-    <%= f.submit "Request a booking"%>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit "Request a booking", class: "btn-flat-RV"%>
   <% end %>
 </div>

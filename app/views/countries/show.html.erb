@@ -21,7 +21,7 @@
 <div class="container">
   <h5><strong>Host:</strong> <%= @country.user.first_name%> <%= @country.user.last_name%></h5>
   <br>
-  <%= link_to "Back to All Countries", countries_path, class: "btn-flat" %>
+  <%= link_to "Back to All Countries", countries_path, class: "btn-flat-RV" %>
 </div>
 <br>
 <br>
@@ -37,12 +37,6 @@
 <% else %>
   <p> (Insert the submit form here when ready) You're not allowed to delete this post mate :) <3 </p>
 <% end %>
-
-<br>
-<br>
-
-
-
 <%= render "bookings/new" %>
 
 
