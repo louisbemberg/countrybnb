@@ -1,6 +1,6 @@
 <div class="container">
-<h3>Hey <%= current_user.first_name %>! Those are your reservations:</h3>
-<table class="reservation">
+  <h3>Hey <%= current_user.first_name %>! Those are your reservations:</h3>
+  <table class="reservation">
   <thead>
     <tr class="headers">
       <th class="header">
@@ -59,11 +59,11 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-<!-- ******** DASHBOARD AS A HOST ********** -->
-<% if @received_bookings.present? %>
-<h3 class="host"> Get your country ready for:</h3>
-<table class="host-table">
+  </table>
+  <!-- ******** DASHBOARD AS A HOST ********** -->
+  <% if @received_bookings.present? %>
+  <h3 class="host"> Get your country ready for:</h3>
+  <table class="host-table">
   <thead>
     <tr class="headers">
       <th class="header">
@@ -102,8 +102,8 @@
               Pending
              </button>
             <div class="dropdown-menu"  data-controller ="menu" aria-labelledby="dropdownMenuButton">
-              <%= link_to "Accept", booking_path(booking, query:"accept"), method: :patch,  class:"dropdown-item"%>
-              <%= link_to "Cancel", booking_path(booking, query: "cancel"), method: :patch, class:"dropdown-item" %>
+              <%= link_to "Accept", booking_path(booking, query:"accept"), method: :patch,  class:"dropdown-item", remote: true%>
+              <%= link_to "Cancel", booking_path(booking, query: "cancel"), method: :patch, class:"dropdown-item", remote: true%>
             </div>
           </div>
         </td>
@@ -136,6 +136,6 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-<% end %>
+  </table>
+  <% end %>
 </div>

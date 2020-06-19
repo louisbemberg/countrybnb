@@ -34,9 +34,11 @@ class BookingsController < ApplicationController
     if params[:query] == "accept"
       @booking.status = "accept"
       @booking.save
+      redirect_to bookings_path
     else
       @booking.status = "cancel"
       @booking.save
+      redirect_to bookings_path
     end
   end
 
