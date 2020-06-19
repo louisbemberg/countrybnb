@@ -11,16 +11,22 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  opacity: 0.85;
+  transition: transform .2s;
 }
 
 .card-category:hover{
-  color: #B9A44C;
+  // color: #E8CD5F;
+  transform: scale(1.02);
+  opacity: 1;
+  // font-size: 28px;
   // NEED TO FIND A BETTER EFFECT THAN THIS UGLY YELLOW I PUT - LOU
   // TO DESIDE WITH THE BOYS...
   // $vegas-gold: #B9A44C;
   // $neon-orange: #FA7921;
   // $lighter-orange: #FE9920;
 }
+
 
 
 .cards-container {
