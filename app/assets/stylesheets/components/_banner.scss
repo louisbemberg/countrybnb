@@ -29,7 +29,7 @@
 }
 
 .show-banner {
-  width: 80vw;
+  width: 100%;
   border-radius: 7px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
   height: 60vh;
@@ -37,4 +37,8 @@
   background-position: center;
   margin-top: 70px;
 
+}
+
+.bottom-border {
+  border-bottom: 1px solid rgb(211,211,211);
 }

@@ -3,31 +3,54 @@
 
 <div class="container">
   <% if @country.photo.attached? %>
-  <div class ="show-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.8)), url('<%= cl_image_path @country.photo.key %>')">
-<% else %>
-<div class ="show-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.8)), url('https://source.unsplash.com/1600x900/?map')">
-<% end %>
-  </div>
+    <div class ="show-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.1)), url('<%= cl_image_path @country.photo.key %>')">
+    </div>
+  <% else %>
+    <div class ="show-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.8)), url('https://source.unsplash.com/1600x900/?map')">
+
+    </div>
+  <% end %>
 </div>
 
-<div class="container">
-  <div class="container-position">
+  <div class="container" style="margin-top: 20px;">
+    <div class="bottom-border">
+      <h1 id="letter-space"> <strong><%= @country.name.upcase %></strong> </h1>
+      <div class="d-flex justify-content-between">
+        <h3 id="letter-space"> <%= @country.price_p_day %>€ per day </h3>
+        <% if current_user == @country.user %>
+          <%= link_to "Delete #{@country.name}",
+                        country_path(@country),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" },
+                        class: "btn-red" %>
+        <% else %>
+            <p> Can't Delete! (remove this before prod) </p>
+        <% end %>
+      </div>
+    </div>
+    <br>
 
     <h3 id="letter-space" class="title"> <strong><%= @country.name.upcase %></strong> </h3>
     <h3 id="letter-space" class="right"> <strong><%= @country.price_p_day %></strong><i class="fas fa-euro-sign"></i> / day</h3>
     <h5 id="letter-space"> <%= @country.description %> </h5>
-  </div>
-</div>
-<div class="container">
   <h5><strong>Host:</strong> <%= @country.user.first_name%> <%= @country.user.last_name%></h5>
-  <br>
-  <%= link_to "Back to All Countries", countries_path, class: "btn-flat-RV" %>
+  <h4>Want to book this country? Enter your dates below!</h4>
+  <%= render "bookings/new" %>
 </div>
 <br>
 <br>
 
 
 <!-- DELETE BUTTON LOGIC : THE BUTTON APPEARS ONLY IF YOU'RE THE HOST-->
+
+
+
+
+
+
+
+<!-- <p>Welcome back: <%= current_user.first_name %></p> -->
+
 <% if current_user == @country.user %>
   <%= link_to "Delete #{@country.name}",
               country_path(@country),
@@ -37,11 +60,5 @@
 <% else %>
   <p> (Insert the submit form here when ready) You're not allowed to delete this post mate :) <3 </p>
 <% end %>
-<%= render "bookings/new" %>
-
-
-
-
-
-<!-- <p>Welcome back: <%= current_user.first_name %></p> -->
+  <%= link_to "Back to All Countries", countries_path, class: "btn-flat-RV" %>
 
