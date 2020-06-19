@@ -50,15 +50,3 @@
 
 
 <!-- <p>Welcome back: <%= current_user.first_name %></p> -->
-
-<% if current_user == @country.user %>
-  <%= link_to "Delete #{@country.name}",
-              country_path(@country),
-              method: :delete,
-              data: { confirm: "Are you sure?" },
-              class: "btn-red" %>
-<% else %>
-  <p> (Insert the submit form here when ready) You're not allowed to delete this post mate :) <3 </p>
-<% end %>
-  <%= link_to "Back to All Countries", countries_path, class: "btn-flat-RV" %>
-
