@@ -14,34 +14,44 @@
 
   <div class="container" style="margin-top: 20px;">
     <div class="bottom-border">
-      <h1 id="letter-space"> <strong><%= @country.name.upcase %></strong> </h1>
+      <h1 id="letter-space" class="title"> <strong><%= @country.name.upcase %></strong> </h1>
       <div class="d-flex justify-content-between">
-        <h3 id="letter-space"> <%= @country.price_p_day %>€ per day </h3>
+        <h3 id="letter-space" class="right"> <strong><%= @country.price_p_day %></strong><i class="fas fa-euro-sign"></i> / day</h3>
         <% if current_user == @country.user %>
           <%= link_to "Delete #{@country.name}",
                         country_path(@country),
                         method: :delete,
                         data: { confirm: "Are you sure?" },
                         class: "btn-red" %>
-        <% else %>
-            <p> Can't Delete! (remove this before prod) </p>
         <% end %>
       </div>
     </div>
     <br>
-
-    <h3 id="letter-space" class="title"> <strong><%= @country.name.upcase %></strong> </h3>
-    <h3 id="letter-space" class="right"> <strong><%= @country.price_p_day %></strong><i class="fas fa-euro-sign"></i> / day</h3>
-    <h5 id="letter-space"> <%= @country.description %> </h5>
-  <h5><strong>Host:</strong> <%= @country.user.first_name%> <%= @country.user.last_name%></h5>
-  <h4>Want to book this country? Enter your dates below!</h4>
-  <%= render "bookings/new" %>
+    <div class="bottom-border">
+      <h5 id="letter-space"> <%= @country.description %> </h5>
+      <h5><strong><i class="fas fa-user"></i> </strong> <%= @country.user.first_name%> <%= @country.user.last_name%></h5>
+      <i class="icon-user"></i>
+    </div>
+    <% if current_user != @country.user %>
+      <div>
+        <br>
+        <br>
+<!--         <h4>Want to book this country? Enter your dates below!</h4> -->
+        <%= link_to countries_path do  %>
+          <i class="fas fa-angle-double-left go-back-button"></i>
+        <% end %>
+        <%= render "bookings/new" %>
+        <br>
+      </div>
+    <% end %>
+  <div id="map"
+      style="width: 100%; height: 400px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
 <br>
-<br>
 
-
-<!-- DELETE BUTTON LOGIC : THE BUTTON APPEARS ONLY IF YOU'RE THE HOST-->
 
 
 
