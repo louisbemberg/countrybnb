@@ -1,6 +1,6 @@
 <div class="container">
 <h3>Hey <%= current_user.first_name %>! Those are your reservations:</h3>
-<table>
+<table class="reservation">
   <thead>
     <tr class="headers">
       <th class="header">
@@ -60,8 +60,10 @@
     <% end %>
   </tbody>
 </table>
-<h3> Get your country ready for:</h3>
-<table>
+<!-- ******** DASHBOARD AS A HOST ********** -->
+<% if @received_bookings.present? %>
+<h3 class="host"> Get your country ready for:</h3>
+<table class="host-table">
   <thead>
     <tr class="headers">
       <th class="header">
@@ -93,18 +95,23 @@
   <tbody>
     <% @received_bookings.each do |booking| %>
       <tr class = "row-table">
+        <% if booking.status == "pending" %>
         <td class="cells">
            <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Pending
-             <!--If status = pending => show pending and the dropdown list-->
              </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <%= link_to "Accept", "path", class:"dropdown-item" %>
-              <%= link_to "Cancel",  "path", class:"dropdown-item" %>
+            <div class="dropdown-menu"  data-controller ="menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to "Accept", booking_path(booking, query:"accept"), method: :patch,  class:"dropdown-item"%>
+              <%= link_to "Cancel", booking_path(booking, query: "cancel"), method: :patch, class:"dropdown-item" %>
             </div>
           </div>
         </td>
+        <% else %>
+        <td class="cells">
+          <%= booking.status.capitalize %>
+        </td>
+        <% end %>
         <td class="cells">
           <%= booking.start_date %>
         </td>
@@ -130,4 +137,5 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 </div>
