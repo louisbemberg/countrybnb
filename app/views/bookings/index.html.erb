@@ -1,5 +1,6 @@
 <div class="container">
   <h3>Hey <%= current_user.first_name %>! Those are your reservations:</h3>
+  <br>
   <table class="reservation">
   <thead>
     <tr class="headers">
@@ -24,9 +25,9 @@
       <th class="header">
         Total
       </th>
-      <th class="header">
+<!--       <th class="header">
         Details
-      </th>
+      </th> -->
     </tr>
   </thead>
   <tbody>
@@ -48,13 +49,10 @@
           <%= booking.country.name %>
         </td>
         <td class="cells">
-          <%= booking.country.user.first_name %>
+          <%= booking.country.user.first_name + " " + booking.country.user.last_name%>
         </td>
         <td class="cells">
           $<%= (booking.country.price_p_day*(booking.end_date-booking.start_date)).to_i%>
-        </td>
-        <td class="cells">
-          <%= link_to "Details", booking_path(booking.id) %>
         </td>
       </tr>
     <% end %>
@@ -63,6 +61,7 @@
   <!-- ******** DASHBOARD AS A HOST ********** -->
   <% if @received_bookings.present? %>
   <h3 class="host"> Get your country ready for:</h3>
+  <br>
   <table class="host-table">
   <thead>
     <tr class="headers">
@@ -87,9 +86,6 @@
       <th class="header">
         Total
       </th>
-      <th class="header">
-        Details
-      </th>
     </tr>
   </thead>
   <tbody>
@@ -98,7 +94,7 @@
         <% if booking.status == "pending" %>
         <td class="cells">
            <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-flat dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Pending
              </button>
             <div class="dropdown-menu"  data-controller ="menu" aria-labelledby="dropdownMenuButton">
@@ -125,13 +121,10 @@
           <%= booking.country.name %>
         </td>
         <td class="cells">
-          <%= booking.user.first_name %>
+          <%= booking.user.first_name + " " + booking.user.last_name%>
         </td>
         <td class="cells">
           $<%= (booking.country.price_p_day*(booking.end_date-booking.start_date)).to_i%>
-        </td>
-        <td class="cells">
-          <%= link_to "Details", booking_path(booking.id) %>
         </td>
       </tr>
     <% end %>

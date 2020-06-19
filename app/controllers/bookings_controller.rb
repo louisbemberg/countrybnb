@@ -32,11 +32,11 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if params[:query] == "accept"
-      @booking.status = "accept"
+      @booking.status = "accepted"
       @booking.save
       redirect_to bookings_path
     else
-      @booking.status = "cancel"
+      @booking.status = "cancelled"
       @booking.save
       redirect_to bookings_path
     end
