@@ -1,7 +1,5 @@
-<div>
- <%= simple_form_for([@country, @booking]) do |f| %>
+ <%= simple_form_for([@country, @booking], remote: true) do |f| %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
-    <%= f.submit "Request a booking", class: "btn-flat-RV"%>
+    <%= f.submit "Request a booking", class: "btn-flat-RV", id: "anchor"%>
   <% end %>
-</div>

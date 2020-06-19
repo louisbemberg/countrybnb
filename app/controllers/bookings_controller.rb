@@ -15,9 +15,15 @@ class BookingsController < ApplicationController
     @booking.country = @country
     @booking.country_id = @country.id
     @booking.user_id = current_user.id
-    @booking.save
+    if @booking.save
+      redirect_to bookings_path
+    else
+      redirect_to country_path(@country, anchor: "anchor")
+      flash[:alert] = @booking.errors.full_messages.first
+      #data: { confirm: "Are you sure?" }
+      #render "countries/show"
 
-    redirect_to bookings_path
+    end
   end
 
   def destroy
@@ -39,4 +45,14 @@ class BookingsController < ApplicationController
   def strong_params
     params.require(:booking).permit(:start_date, :end_date)
   end
+
+  # def date_validation
+  # if self[:end_date] < self[:start_date]
+  #   errors[:end_date] << "Error message"
+  #   return false
+  # else
+  #   return true
+  # end
+#end
+
 end
