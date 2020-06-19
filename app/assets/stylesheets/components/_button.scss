@@ -31,12 +31,12 @@
   padding: 8px 24px;
   border-radius: 4px;
   background: #3e8e7c;
-  opacity: 0.9;
+  opacity: 0.8;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #3CA68F;
+  background: $badassgreen;
   text-decoration: none;
   color: white;
   opacity: 1.0;
@@ -49,17 +49,19 @@
 }
 
 .btn-flat-RV {
-  border: 2px solid $sexygreen;
+  border: 2px solid #3CA68F;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  color: $sexygreen;
+  color: $lighter-green;
   text-decoration: none;
   &:hover {
-  color: $sexygreen; // could also add $light-green
+  color: #3CA68F; // could also add $light-green
+  border: 2px solid #0E7371;
   opacity: 0.8;
   text-decoration: none;
   box-shadow: 6px 6px 9px rgba(0,0,0,0.08);
+  background-color: rgb(250,250,250);
   }
 }
 
