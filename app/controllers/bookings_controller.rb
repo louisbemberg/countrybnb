@@ -23,6 +23,17 @@ class BookingsController < ApplicationController
   def destroy
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if params[:query] == "accept"
+      @booking.status = "accept"
+      @booking.save
+    else
+      @booking.status = "cancel"
+      @booking.save
+    end
+  end
+
   private
 
   def strong_params
