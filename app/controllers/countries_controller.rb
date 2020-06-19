@@ -29,6 +29,12 @@ class CountriesController < ApplicationController
   def show
     @country = Country.find(params[:id])
     @booking = Booking.new
+
+    @markers = [{
+      lat: @country.latitude,
+      lng: @country.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { country: @country })
+    }]
   end
 
   def destroy

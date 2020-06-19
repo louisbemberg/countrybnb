@@ -36,7 +36,7 @@
 }
 
 .btn-flat:hover {
-  background: $badassgreen;
+  // background: $badassgreen; <== Check with the team for another green?
   text-decoration: none;
   color: white;
   opacity: 1.0;
@@ -97,6 +97,13 @@
   color: white;
   text-decoration: none;
   }
+}
+
+.go-back-button {
+  font-size: 30px;
+  color: $sexygreen;
+  position: absolute;
+  top: 10px;
 }
 
 
