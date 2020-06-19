@@ -4,6 +4,9 @@
 <div class="container">
   <% if @country.photo.attached? %>
     <div class ="show-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.1)), url('<%= cl_image_path @country.photo.key %>')">
+      <%= link_to countries_path do  %>
+        <i class="fas fa-angle-double-left go-back-button"></i>
+      <% end %>
     </div>
   <% else %>
     <div class ="show-banner" style= "background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.8)), url('https://source.unsplash.com/1600x900/?map')">
@@ -36,10 +39,7 @@
       <div>
         <br>
         <br>
-<!--         <h4>Want to book this country? Enter your dates below!</h4> -->
-        <%= link_to countries_path do  %>
-          <i class="fas fa-angle-double-left go-back-button"></i>
-        <% end %>
+
         <%= render "bookings/new" %>
         <br>
       </div>
