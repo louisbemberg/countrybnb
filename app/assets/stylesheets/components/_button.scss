@@ -31,7 +31,6 @@
   padding: 8px 24px;
   border-radius: 4px;
   background: #3e8e7c;
-  opacity: 0.8;
   transition: background 0.3s ease;
 }
 
@@ -39,8 +38,8 @@
   // background: $badassgreen; <== Check with the team for another green?
   text-decoration: none;
   color: white;
-  opacity: 1.0;
   box-shadow: 6px 6px 9px rgba(0,0,0,0.08);
+  filter: saturate(150%);
 }
 
 .btn-flat a{

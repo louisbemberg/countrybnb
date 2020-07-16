@@ -20,8 +20,8 @@ class BookingsController < ApplicationController
     else
       redirect_to country_path(@country, anchor: "anchor")
       flash[:alert] = @booking.errors.full_messages.first
-      #data: { confirm: "Are you sure?" }
-      #render "countries/show"
+      # data: { confirm: "Are you sure?" }
+      # render "countries/show"
 
     end
   end
