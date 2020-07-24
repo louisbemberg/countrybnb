@@ -19,13 +19,13 @@ user3 = User.create!(email:"Kurz69@gmail.com", first_name: "Basti", last_name:"K
 user4 = User.create!(email:"louis.bemberg@gmail.com", first_name: "Louis", last_name:"B", password:"1234567")
 user5 = User.create!(email:"donald.trump@gmail.com", first_name: "Donald", last_name:"Trump", password:"1234567")
 user6 = User.create!(email:"Angie@gmail.com", first_name: "Angela", last_name:"Merkel", password:"1234567")
-user7 = User.create!(email:"atomicbombz@gmail.com", first_name: "Jong-Un", last_name:"Kim", password:"1234567")
+user7 = User.create!(email:"kim@gmail.com", first_name: "Jong-Un", last_name:"Kim", password:"1234567")
 
 puts "3 - Creating Countries with Pictures"
 
 puts "3.1 - Creating Spain..."
 spain_picture = URI.open('https://images.unsplash.com/photo-1445265005361-ae273d6a1e16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80')
-spain = Country.new(name: "Spain", address: "Madrid Center, Spain", description: "A lovely placed where people wake up late and still need a siesta. Weather is hot and beers are cold. Also has the greatest coding school of all time.", price_p_day: 150, user_id: user1.id)
+spain = Country.new(name: "Spain", address: "Madrid Center, Spain", description: "A lovely placed where people wake up late and still need a siesta. Weather is hot and beers are cold. Also host of the greatest coding school of all time.", price_p_day: 150, user_id: user1.id)
 spain.photo.attach(io: spain_picture, filename: 'spain.png', content_type: 'image/png')
 spain.save
 
@@ -37,7 +37,7 @@ france.save
 
 puts "3.3 - Creating Austria..."
 austria_picture = URI.open('https://images.unsplash.com/photo-1516550893923-42d28e5677af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80')
-austria = Country.new(name: "Austria", address: "Vienna Center, Austria", description: "The center of the universe. Austria is to Germany like Coca-Cola is to Pepsi.", price_p_day: 150, user_id: user3.id)
+austria = Country.new(name: "Austria", address: "Vienna Center, Austria", description: "The center of the universe. Austria is to Germany like Coca-Cola is to Pepsi. Beware of the parties in october, especially if you're not a fan of beer.", price_p_day: 150, user_id: user3.id)
 austria.photo.attach(io: austria_picture, filename: 'austria.png', content_type: 'image/png')
 austria.save
 
@@ -49,19 +49,19 @@ switzerland.save
 
 puts "3.4 - Creating USA..."
 usa_picture = URI.open('https://images.unsplash.com/photo-1550850839-8dc894ed385a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1954&q=80')
-usa = Country.new(name: "USA", address: "Washington D.C. Center, USA", description: "HELL YEA! MURICA! Really good at sports, startups, and tech. Currently leading the charts in olympic gold medals andCoronavirus infections, and undergoing a major software update on their police.rb files.", price_p_day: 135, user_id:user5.id)
+usa = Country.new(name: "USA", address: "Washington D.C. Center, USA", description: "HELL YEA! MURICA! Really good at sports, startups, and tech. Currently leading the charts in olympic gold medals and Coronavirus infections, and undergoing a major software update on their constitution.rb files.", price_p_day: 135, user_id:user5.id)
 usa.photo.attach(io: usa_picture, filename: 'switzerland.png', content_type: 'image/png')
 usa.save
 
 puts "3.5 - Creating Germany..."
 germany_picture = URI.open('https://images.unsplash.com/photo-1449452198679-05c7fd30f416?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
-germany = Country.new(name: "Germany", address: "Berlin Center, Germany", description: "Small, unimportant place next to Austria", price_p_day: 150, user_id: user6.id)
+germany = Country.new(name: "Germany", address: "Berlin Center, Germany", description: "Small, unimportant place next to Austria particularly good at building fast cars. High sense of dedication and hard work, low sense of humor.", price_p_day: 150, user_id: user6.id)
 germany.photo.attach(io: germany_picture, filename: 'germany.png', content_type: 'image/png')
 germany.save
 
 puts "3.6 Creating North Korea..."
 northkorea_picture = URI.open('https://images.unsplash.com/photo-1543325768-c2650cc0d8cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
-northkorea = Country.new(name: "North Korea", address: "Pyongyang, North Korea", description: "Atomic bombs & chill", price_p_day: 150, user_id: user7.id)
+northkorea = Country.new(name: "North Korea", address: "Pyongyang, North Korea", description: "No public information available about this country on the web. You'll just have to rent and see for yourself!", price_p_day: 150, user_id: user7.id)
 northkorea.photo.attach(io: northkorea_picture, filename: 'northkorea.png', content_type: 'image/png')
 northkorea.save
 
